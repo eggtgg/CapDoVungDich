@@ -32,7 +32,12 @@ ggplot(a, aes(x = "" , y = phan_tram, fill = fct_inorder(cap))) +
                    aes(y = pos, label = paste0(phan_tram, "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE) +
   guides(fill = guide_legend(title = "Cap do")) +
-  labs(title="BIEU DO THE HIEN TI LE TONG SO CA MAC COVID 19 CUA CAC QUOC GIA DAN DAU TREN THE GIOI",
+  labs(title="                BIEU DO THE HIEN TI LE CAP DO VUNG DICH 10/12/2021",
   )+
   theme_void() +
   scale_fill_manual(values=c("#00b159", "#ffc425", "#f37735","#d11141"))
+
+colors = c("#00b159", "#ffc425", "#f37735","#d11141")
+barplot(table(cap),
+        main="BIEU DO THE HIEN CAP DO VUNG DICH TT-HUE 10/12/2021",
+        col=colors, horiz=TRUE)
