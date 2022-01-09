@@ -1,4 +1,3 @@
-# Bieu do 5: BIEU DO THE HIEN TI LE TONG SO CA MAC COVID 19 CUA CAC QUOC GIA DAN DAU TREN THE GIOI
 library(data.table)
 library(ggplot2)
 library(ggrepel)
@@ -7,8 +6,15 @@ library(dplyr)
 setwd('C:\\Users\\Dell\\mtri_egg\\capdovungdich')
 df <- read.csv("ban_mau_2.csv", encoding = "UTF-8", header = TRUE)
 df
+
+# Thong ke mo ta
 df$huyen
 cap = df$cap
+length(cap)
+table(cap)
+table(cap)/length(cap)
+
+# ve bieu do
 a = as.data.frame(table(cap))
 a$Freq
 
@@ -24,6 +30,7 @@ a_2 <- a %>%
          pos = if_else(is.na(pos), phan_tram/2, pos))
 a_2
 
+# Bieu do tron
 ggplot(a, aes(x = "" , y = phan_tram, fill = fct_inorder(cap))) +
   geom_col(width = 1, color = 1) +
   coord_polar(theta = "y") +
@@ -37,6 +44,7 @@ ggplot(a, aes(x = "" , y = phan_tram, fill = fct_inorder(cap))) +
   theme_void() +
   scale_fill_manual(values=c("#00b159", "#ffc425", "#f37735","#d11141"))
 
+# Bieu do cot ngang
 colors = c("#00b159", "#ffc425", "#f37735","#d11141")
 barplot(table(cap),
         main="BIEU DO THE HIEN CAP DO VUNG DICH TT-HUE 10/12/2021",
